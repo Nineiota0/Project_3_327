@@ -112,3 +112,17 @@ Insert Response: {'key': 'color', 'status': 'stored', 'value': 'blue'}
 [*] Querying key-value pair...
 Query Response: {'key': 'color', 'value': 'blue'}
 ```
+### Option 3: Gossip Protocol
+• Periodically share peer lists with random neighbors.
+• Limit message flooding using TTL (time-to-live) metadata.
+
+To test this run:
+```bash
+python test_gossip.py
+```
+
+The message received should be:
+```bash
+Gossip sent: {'known_peers': ['http://node1:5000', 'http://localhost:5001', 'http://node2:5000'], 'status': 'gossip received'}
+Gossip received at node2: {'known_peers': ['http://node1:5000', 'http://localhost:5002', 'http://node2:5000'], 'status': 'gossip received'}
+```
