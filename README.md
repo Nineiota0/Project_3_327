@@ -114,6 +114,7 @@ Query Response: {'key': 'color', 'value': 'blue'}
 ```
 ### Option 3: Gossip Protocol
 • Periodically share peer lists with random neighbors.
+
 • Limit message flooding using TTL (time-to-live) metadata.
 
 To test this run:
